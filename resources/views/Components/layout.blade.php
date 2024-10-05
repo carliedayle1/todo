@@ -21,7 +21,7 @@
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            <img class="h-8 w-8" src="https://icon-library.com/images/icon-logo-png/icon-logo-png-10.jpg" alt="Your Company">
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
@@ -47,7 +47,7 @@
                 <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                   <span class="absolute -inset-1.5"></span>
                   <span class="sr-only">Open user menu</span>
-                  <img class="h-8 w-8 rounded-full" src="https://www.flaticon.com/free-icon/profile_5987424?term=profile&page=1&position=80&origin=tag&related_id=5987424" alt="">
+                  <img class="h-8 w-8 rounded-full" src="https://cdn-icons-png.flaticon.com/512/5987/5987424.png" alt="">
                 </button>
               </div>
             </div>
@@ -82,7 +82,7 @@
       <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
           <div class="flex-shrink-0">
-            <img class="h-10 w-10 rounded-full" src="https://www.flaticon.com/free-icon/profile_5987424?term=profile&page=1&position=80&origin=tag&related_id=5987424" alt="">
+            <img class="h-10 w-10 rounded-full" src="https://cdn-icons-png.flaticon.com/512/5987/5987424.png" alt="">
           </div>
           <div class="ml-3">
             <div class="text-base font-medium leading-none text-white">Allasgo Chryssdale</div>

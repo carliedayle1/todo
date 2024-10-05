@@ -1,13 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/', [TodoController::class, 'home']);
+
+Route::get('/about', [TodoController::class, 'about']);
+
+Route::get('/contact', [TodoController::class, 'contact']);
