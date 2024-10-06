@@ -1,14 +1,12 @@
 <?php
-
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route for home page, using the 'home' method from TodoController
+Route::get('/', [TodoController::class, 'home'])->name('home');
 
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
+// Route for about page
+Route::get('/about', [TodoController::class, 'about'])->name('about');
+
+// Route for contact page
+Route::get('/contact', [TodoController::class, 'contact'])->name('contact');
