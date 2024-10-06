@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Todo;
 use Illuminate\Http\Request;
 
 class TodosController extends Controller
@@ -11,10 +12,11 @@ class TodosController extends Controller
     }
 
     public function welcome(){
-        $name = "Hello World!";
-        return view('welcome', [
-            'name' => $name,
-        ]);
+        
+        $todos = Todo::all();
+
+        dd($todos);
+        return view('welcome');
     }
 
     public function contact(){
