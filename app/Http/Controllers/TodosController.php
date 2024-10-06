@@ -11,7 +11,10 @@ class TodosController extends Controller
     }
     
     public function home(){
-        return view('welcome');
+        $name = "Caryl Dapanas";
+        return view('welcome', [
+            'name' => $name,
+        ]);
     }
     
     public function contact(){
