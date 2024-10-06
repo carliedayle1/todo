@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Todo;
 
 class TodosController extends Controller
 {
@@ -11,9 +12,10 @@ class TodosController extends Controller
     }
     
     public function home(){
-        $name = "Caryl Dapanas";
+        $todos = Todo::all();
+        
         return view('welcome', [
-            'name' => $name,
+            'todos' => $todos,
         ]);
     }
     
