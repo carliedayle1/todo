@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class TodoFactory extends Factory
 {
     /**
-     * Define the model's default state.
+     * Define the model's default state. kani sad hehe
      *
      * @return array<string, mixed>
      */

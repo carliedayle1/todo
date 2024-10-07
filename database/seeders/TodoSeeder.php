@@ -9,7 +9,7 @@ use Illuminate\Database\Seeder;
 class TodoSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds. kituyo ni para maka commit ko hehe
      */
     public function run(): void
     {
