@@ -10,5 +10,5 @@ class todo extends Model
     use HasFactory;
 
     protected $table = 'todos';
-    protected $fillable = ['title', 'description', 'completed'];a
+    protected $fillable = ['title', 'description', 'completed'];
 }
