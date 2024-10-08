@@ -15,8 +15,10 @@ class TodosController extends Controller
         
         $todos = Todo::all();
 
-        dd($todos);
-        return view('welcome');
+        //dd($todos);
+        return view('welcome', [
+            'todos' => $todos,
+        ]);
     }
 
     public function contact(){
