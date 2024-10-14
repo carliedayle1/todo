@@ -2,5 +2,5 @@
     <x-slot:heading>
         About
     </x-slot>
- <h1>About Pagez</h1>
+ <h1>About Page</h1>
 </x-layout>
