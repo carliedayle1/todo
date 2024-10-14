@@ -11,5 +11,3 @@
         href="{{ $name == 'home' ? '/': $name }}">{{ $slot }}</a>
 </div>
 @endif
-
-//navlink
