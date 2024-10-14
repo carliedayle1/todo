@@ -10,6 +10,8 @@ class TodoController extends Controller
     public function home()
     {
         $todos = Todo::all();
+
+        
         return view('home', [
             'todos' => $todos,
         ]);
@@ -21,5 +23,9 @@ class TodoController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+    public function createtodo()
+    {
+        return view('createtodo');
     }
 }
