@@ -10,7 +10,7 @@ class TodoSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         Todo::factory(10)->create();
     }

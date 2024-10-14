@@ -1,12 +1,12 @@
 <?php
-use App\Http\Controllers\TodoController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController; //remove
 
-// Route for home page, using the 'home' method from TodoController
-Route::get('/', [TodoController::class, 'home'])->name('home');
+Route::get('/', [TodoController::class, 'home']);
 
-// Route for about page
-Route::get('/about', [TodoController::class, 'about'])->name('about');
+Route::get('/about', [TodoController::class, 'about']);
 
-// Route for contact page
-Route::get('/contact', [TodoController::class, 'contact'])->name('contact');
+Route::get('/contact', [TodoController::class, 'contact']);
+
+Route::get('/createtodo', [TodoController::class, 'createtodo']);
