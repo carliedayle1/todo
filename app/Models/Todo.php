@@ -5,6 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
-    // Fillable fields
+    // Fillable fieldsssss
     protected $fillable = ['title', 'description', 'completed'];
 }
