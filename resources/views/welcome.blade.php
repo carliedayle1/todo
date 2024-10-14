@@ -69,3 +69,5 @@
         </div>
     </div>
 </x-layout>
+
+//welcome

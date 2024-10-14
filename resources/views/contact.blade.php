@@ -3,3 +3,4 @@
         <h1 class="text-2xl font-semibold mb-4">Contact Page</h1>
     </div>
 </x-layout>
+//contact
