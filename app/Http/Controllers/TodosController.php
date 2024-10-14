@@ -15,11 +15,12 @@ class TodosController extends Controller
 
     public function contacts()
     {
-        return view('contact');
+        return view('contacts');
     }
     public function home()
     {
-        return view('welcome');
+            $todos = Todos::all();
+            return view('welcome',compact('todos'));
 
     }
 }
