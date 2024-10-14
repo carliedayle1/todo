@@ -1,6 +1,6 @@
 <x-layout>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h1 class="text-2xl font-semibold mb-4">Contact Page</h1>
+        <h1 class="text-2xl font-semibold mb-4">Contact</h1>
     </div>
 </x-layout>
 //contact
