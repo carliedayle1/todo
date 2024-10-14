@@ -14,14 +14,8 @@ use App\Http\Controllers\TodosController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodosController::class, 'home']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [TodosController::class, 'about']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contacts', [TodosController::class, 'contacts']);
