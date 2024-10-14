@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Todos;
+use App\Models\todos;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +13,6 @@ class TodoSeeder extends Seeder
      */
     public function run(): void
     {
-        Todos::factory()->count(10)->create();
+        todos::factory()->count(10)->create();
     }
 }
