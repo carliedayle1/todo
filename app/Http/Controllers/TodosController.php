@@ -21,4 +21,8 @@ class TodosController extends Controller
     public function contact(){
         return view('contact');
     }
+
+    public function create(){
+        return view('create');
+    }
 }
