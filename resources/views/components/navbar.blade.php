@@ -50,6 +50,7 @@
           <x-navlink name="home">Home</x-navlink>
           <x-navlink name="about">About</x-navlink>
           <x-navlink name="contact">Contact</x-navlink>
+          <x-navlink name="todos">TodoTable</x-navlink>
         </div>
       </div>
       <!-- End Collapse -->
