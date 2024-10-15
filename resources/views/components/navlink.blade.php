@@ -3,7 +3,7 @@
 @if( $name == 'home' ? request()->is('/') : request()->is($name))
 <div>
     <a class="relative inline-block text-black focus:outline-none before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400 dark:text-white"
-        href="{{ $name == 'home' ? '/': $name  }}" aria-current="page">{{ $slot }}</a>
+        href="{{ $name == 'home' ? '/': $name }}" aria-current="page">{{ $slot }}</a>
 </div>
 @else
 <div>
