@@ -15,13 +15,7 @@ class TodoController extends Controller
         return view('home', [
             'todos' => $todos,
         ]);
-    } 
-    public function welcome()
-    {
-        // Return the welcome view
-        return view('welcome');
     }
-
     public function about()
     {
         return view('about');
@@ -29,5 +23,9 @@ class TodoController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+    public function createtodo()
+    {
+        return view('createtodo');
     }
 }
