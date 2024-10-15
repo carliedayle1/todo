@@ -15,12 +15,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col">
+<body class="flex flex-col min-h-screen text-gray-800 bg-gray-100 dark:bg-gray-900 dark:text-gray-200">
     <!-- Header -->
     <x-navbar />
 
     <!-- Main Content -->
-    <main class="flex-grow container mx-auto px-6 py-8">
+    <main class="container flex-grow px-6 py-8 mx-auto">
         {{ $slot }}
     </main>
 
