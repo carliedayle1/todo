@@ -8,8 +8,18 @@ use App\Models\Todo;
 class TodoSeeder extends Seeder
 {
     public function run()
-    {
-        // Create 10 sample todos
-        Todo::factory()->count(10)->create();
-    }
+{
+    \App\Models\Todo::create([
+        'title' => 'Buy groceries',
+        'description' => 'Purchase milk, bread, and eggs',
+        'status' => 'pending',
+    ]);
+
+    \App\Models\Todo::create([
+        'title' => 'Finish Laravel project',
+        'description' => 'Complete the todo list app',
+        'status' => 'completed',
+    ]);
+}
+
 }

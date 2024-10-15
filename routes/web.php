@@ -18,5 +18,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-// Resource route for todos
-Route::resource('todos', TodoController::class);
+
+// Route to display the list of todos
+Route::get('/todos', [TodoController::class, 'index'])->name('todos.index');
+
+
+
