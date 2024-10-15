@@ -3,10 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Todo;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Todo>
  */
+
 class TodoFactory extends Factory
 {
     /**
@@ -17,9 +19,9 @@ class TodoFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(3),
-            'description' => $this->faker->paragraph(),
-            'compeleted' => $this->faker->boolean(50), 
+            'title' => fake()->sentence(),
+            'description' => fake()->paragraph(),
+            //'name' => fake()->name()
         ];
     }
 }
