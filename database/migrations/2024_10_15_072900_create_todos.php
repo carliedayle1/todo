@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations of this.
      */
     public function up(): void
     {
@@ -28,3 +28,4 @@ return new class extends Migration
         Schema::dropIfExists('todos');
     }
 };
+
