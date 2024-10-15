@@ -10,10 +10,9 @@ class TodoController extends Controller
     public function welcome()
     {
         $todos = Todo::all();
-       //dd($todos);
-       return view('welcome', [
-        'todos' => $todos,
-    ]);
+        return view('welcome', [
+            'todos' => $todos,
+        ]);
     }
 
     public function about()
@@ -29,5 +28,25 @@ class TodoController extends Controller
     public function create()
     {
         return view('create');
+    }
+
+    public function store(Request $request)
+    {
+        // Validate the incoming request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'completed' => 'required|boolean',
+        ]);
+
+        // Create a new Todo instance and fill it with the request data
+        Todo::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'completed' => $request->completed,
+        ]);
+
+        // Redirect back to the welcome page with a success message
+        return redirect()->route('/todo/store')->with('success', 'Todo created successfully!');
     }
 }

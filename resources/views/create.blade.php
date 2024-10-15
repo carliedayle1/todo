@@ -1,0 +1,67 @@
+<x-layout>
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h1 class="text-2xl font-semibold mb-4">Create Todo</h1>
+        <form action="{{ route('todo.store') }}" method="POST">
+            @csrf
+
+            <div class="max-w-sm space-y-5">
+                <!-- Floating Input -->
+                <div class="relative mb-5">
+                    <input type="text" name="title" id="title" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                    focus:pt-6
+                    focus:pb-2
+                    [&:not(:placeholder-shown)]:pt-6
+                    [&:not(:placeholder-shown)]:pb-2
+                    autofill:pt-6
+                    autofill:pb-2" placeholder="Title here" required>
+                    <label for="title" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                    peer-focus:scale-90
+                    peer-focus:translate-x-0.5
+                    peer-focus:-translate-y-1.5
+                    peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                    peer-[:not(:placeholder-shown)]:scale-90
+                    peer-[:not(:placeholder-shown)]:translate-x-0.5
+                    peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                    peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Title</label>
+                </div>
+            </div>
+
+            <div class="max-w-sm space-y-5">
+                <!-- Floating Textarea -->
+                <div class="relative">
+                    <textarea id="description" name="description" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                    focus:pt-6
+                    focus:pb-2
+                    [&:not(:placeholder-shown)]:pt-6
+                    [&:not(:placeholder-shown)]:pb-2
+                    autofill:pt-6
+                    autofill:pb-2" placeholder="This is a textarea placeholder"></textarea>
+                    <label for="description" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                    peer-focus:text-xs
+                    peer-focus:-translate-y-1.5
+                    peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                    peer-[:not(:placeholder-shown)]:text-xs
+                    peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                    peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Description</label>
+                </div>
+
+                <p class="text-sm">Completed?</p>
+                <div class="grid sm:grid-cols-2 gap-2">
+                    <label for="completed-yes" class="flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+                        <input type="radio" name="completed" value="1" id="completed-yes" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
+                        <span class="text-sm text-gray-500 ms-3 dark:text-neutral-400">Yes</span>
+                    </label>
+
+                    <label for="completed-no" class="flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+                        <input type="radio" name="completed" value="0" id="completed-no" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
+                        <span class="text-sm text-gray-500 ms-3 dark:text-neutral-400">No</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</x-layout>
