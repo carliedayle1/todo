@@ -25,7 +25,13 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">{{ $todo->description }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">{{ $todo->completed ? "Yes" : "No" }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                                <button type="button" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:text-blue-400">Delete</button>
+                                                <form action="{{ route('todo.destroy', $todo->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this todo?');">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-red-600 hover:text-red-800 focus:outline-none focus:text-red-800 disabled:opacity-50 disabled:pointer-events-none dark:text-red-500 dark:hover:text-red-400 dark:focus:text-red-400">
+            Delete
+        </button>
+    </form>
                                             </td>
                                         </tr>
                                     @endforeach

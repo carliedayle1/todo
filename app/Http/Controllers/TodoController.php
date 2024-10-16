@@ -47,6 +47,16 @@ class TodoController extends Controller
         ]);
 
         // Redirect back to the welcome page with a success message
-        return redirect()->route('/todo/store')->with('success', 'Todo created successfully!');
+        return redirect()->route('welcome')->with('success', 'Todo created successfully!');
     }
+
+    public function destroy($id)
+{
+    // Find the Todo by its ID and delete it
+    $todo = Todo::findOrFail($id);
+    $todo->delete();
+
+    // Redirect back to the welcome page with a success message
+    return redirect()->route('welcome')->with('success', 'Todo deleted successfully!');
+}
 }

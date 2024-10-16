@@ -12,4 +12,6 @@ Route::get('/contact', [TodoController::class, 'contact']);
 
 Route::get('/create', [TodoController::class, 'create']);
 
-Route::post('/store', [TodoController::class, 'store'])->name('todo.store');
+Route::post('/', [TodoController::class, 'store'])->name('todo.store');
+
+Route::delete('/todo/{id}', [TodoController::class, 'destroy'])->name('todo.destroy');
