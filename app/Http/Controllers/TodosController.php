@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-#activity 3 done
+#activity 3 is done
 class TodosController extends Controller
 {
     public function about()
