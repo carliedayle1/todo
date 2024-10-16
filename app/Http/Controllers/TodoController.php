@@ -22,7 +22,11 @@ class TodoController extends Controller
     }
 
     public function contact(){
-        return view('contact');
+        return view('contacts');
+    }
+
+    public function create(){
+        return view('create');
     }
 
 }
