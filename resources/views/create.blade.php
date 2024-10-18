@@ -45,17 +45,13 @@
                     peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Description</label>
                 </div>
 
+                <!-- Select Dropdown for Completed -->
                 <p class="text-sm">Completed?</p>
-                <div class="grid sm:grid-cols-2 gap-2">
-                    <label for="completed-yes" class="flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
-                        <input type="radio" name="completed" value="1" id="completed-yes" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800">
-                        <span class="text-sm text-gray-500 ms-3 dark:text-neutral-400">Yes</span>
-                    </label>
-
-                    <label for="completed-no" class="flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
-                        <input type="radio" name="completed" value="0" id="completed-no" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" checked>
-                        <span class="text-sm text-gray-500 ms-3 dark:text-neutral-400">No</span>
-                    </label>
+                <div class="relative">
+                    <select name="completed" id="completed" class="w-full p-4 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600">
+                        <option value="0" selected>No</option>
+                        <option value="1">Yes</option>
+                    </select>
                 </div>
 
                 <button type="submit" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none">
@@ -65,3 +61,4 @@
         </form>
     </div>
 </x-layout>
+

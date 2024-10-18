@@ -51,12 +51,42 @@ class TodoController extends Controller
     }
 
     public function destroy($id)
-{
-    // Find the Todo by its ID and delete it
-    $todo = Todo::findOrFail($id);
-    $todo->delete();
+    {
+         // Find the Todo by its ID and delete it
+         $todo = Todo::findOrFail($id);
+         $todo->delete();
 
-    // Redirect back to the welcome page with a success message
-    return redirect()->route('welcome')->with('success', 'Todo deleted successfully!');
+         // Redirect back to the welcome page with a success message
+         return redirect()->route('welcome')->with('success', 'Todo deleted successfully!');
+    }
+
+    public function editOrUpdate(Request $request, $id)
+{
+    \Log::info("Fetching Todo with ID: $id");
+    // Fetch the todo item based on the id
+    $todo = Todo::findOrFail($id);
+
+    // If the request is GET, show the edit form
+    if ($request->isMethod('get')) {
+        return view('edit', compact('todo'));
+    }
+
+    // If the request is POST, update the todo item
+    if ($request->isMethod('put')) {
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'nullable',
+            'completed' => 'required|boolean',
+        ]);
+
+        // Update the todo item
+        $todo->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'completed' => $request->completed,
+        ]);
+
+        return redirect()->route('welcome')->with('success', 'Todo updated successfully!');
+    }
 }
 }
