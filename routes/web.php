@@ -3,16 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodoController::class, 'welcome'])->name('welcome'); 
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [TodoController::class, 'about']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [TodoController::class, 'contact']);
 
-Route::get('/todos', [TodoController::class, 'showTodos'])->name('todos.index');
+Route::get('/create', [TodoController::class, 'create']);
+
+Route::post('/', [TodoController::class, 'store'])->name('todo.store');
+
+Route::delete('/todo/{id}', [TodoController::class, 'destroy'])->name('todo.destroy');
+
+Route::get('/todos/{id}/update', [TodoController::class, 'update'])->name('todo.edit');
+Route::put('/todos/{id}/update', [TodoController::class, 'update'])->name('todo.update');

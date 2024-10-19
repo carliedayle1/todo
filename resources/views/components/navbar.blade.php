@@ -1,4 +1,3 @@
-
 <!-- ========== HEADER ========== -->
 <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
     <nav class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 md:px-8 mx-auto">
@@ -50,7 +49,7 @@
           <x-navlink name="home">Home</x-navlink>
           <x-navlink name="about">About</x-navlink>
           <x-navlink name="contact">Contact</x-navlink>
-          <x-navlink name="todos">Todo</x-navlink>
+          <x-navlink name="create">Create Todo</x-navlink>
         </div>
       </div>
       <!-- End Collapse -->

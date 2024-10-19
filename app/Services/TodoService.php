@@ -15,4 +15,8 @@ class TodoService
     {
         return Todo::all();
     }
+
+    public function createTodoData ($data) {
+        return Todo::create($data);
+    }
 }
