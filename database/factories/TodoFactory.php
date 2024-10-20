@@ -19,7 +19,7 @@ class TodoFactory extends Factory
         return [
             'title' => $this->faker->sentence(3),
             'description' => $this->faker->paragraph(),
-            'compeleted' => $this->faker->boolean(50), 
+            'completed' => $this->faker->boolean(50), 
         ];
     }
 }
