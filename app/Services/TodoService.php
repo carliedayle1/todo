@@ -16,7 +16,21 @@ class TodoService
         return Todo::all();
     }
 
-    public function createTodoData ($data) {
+    public function createTodoData($data)
+    {
         return Todo::create($data);
+    }
+
+    public function deleteTodoData ($id) {
+        $todo = Todo::findOrFail($id);
+        $todo->delete();
+        return $todo;
+    }
+
+    public function handleTodoDataUpdate (array $validateTodoData, $id) 
+    {
+        $todo = Todo::findOrFail($id);
+        $todo->update($validateTodoData);
+        return $todo;
     }
 }

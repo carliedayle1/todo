@@ -72,48 +72,55 @@ class TodoController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'completed' => 'required|boolean',
-        ]);
+        try {
+            $validated = $request->validate([
+                'title' => 'required|string|max:255',
+                'description' => 'nullable|string',
+                'completed' => 'required|boolean',
+            ]);
 
-        $this->todoService->createTodoData($validated);
+            $this->todoService->createTodoData($validated);
 
-        return redirect()->route('welcome')->with('success', 'Todo created successfully!');
+            return redirect()->route('welcome')->with('success', 'Todo created successfully!');
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', 'Failed to Store Data in Todo: ' . $ex->getMessage());
+        }
     }
 
     public function destroy($id)
     {
-        $todo = Todo::findOrFail($id);
-        $todo->delete();
+        try {
+            $this->todoService->deleteTodoData($id);
 
-        return redirect()->route('welcome')->with('success', 'Todo deleted successfully!');
+            return redirect()->route('welcome')->with('success', 'Todo deleted successfully!');
+        } catch (Exception $ex) {
+            return redirect()->back()->with('error', 'Failed to Delete Data in Todo: ' . $ex->getMessage());
+        }
     }
 
     public function update(Request $request, $id)
     {
         Log::info("Fetching Todo with ID: $id");
-        $todo = Todo::findOrFail($id);
 
         if ($request->isMethod('get')) {
+            $todo = $this->todoService->getTodoById($id);
             return view('edit', compact('todo'));
         }
 
         if ($request->isMethod('put')) {
-            $request->validate([
+            $validatedData = $request->validate([
                 'title' => 'required|max:255',
                 'description' => 'nullable',
                 'completed' => 'required|boolean',
             ]);
-    
-            $todo->update([
-                'title' => $request->title,
-                'description' => $request->description,
-                'completed' => $request->completed,
-            ]);
-    
-            return redirect()->route('welcome')->with('success', 'Todo updated successfully!'); // Ensure this route name matches your routes file
+
+            try {
+                $this->todoService->handleTodoDataUpdate($validatedData, $id);
+
+                return redirect()->route('welcome')->with('success', 'Todo updated successfully!');
+            } catch (Exception $ex) {
+                return redirect()->back()->with('error', 'Failed to update Todo: ' . $ex->getMessage());
+            }
         }
     }
 }

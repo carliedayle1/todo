@@ -4,17 +4,17 @@
 
         <div class="mt-6">
             <div class="flex flex-col">
-                <div class="-m-1.5 overflow-x-auto">
-                    <div class="p-1.5 min-w-full inline-block align-middle">
+                <div class="overflow-x-auto">
+                    <div class="inline-block min-w-full align-middle">
                         <div class="overflow-hidden">
-                            <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+                            <table class="w-full table-auto divide-y divide-gray-200 dark:divide-neutral-700">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">ID</th>
-                                        <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Title</th>
-                                        <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Description</th>
-                                        <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Completed</th>
-                                        <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th>
+                                        <th scope="col" class="w-1/12 px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">ID</th>
+                                        <th scope="col" class="w-3/12 px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Title</th>
+                                        <th scope="col" class="w-4/12 px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Description</th>
+                                        <th scope="col" class="w-2/12 px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Completed</th>
+                                        <th scope="col" class="w-2/12 px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
@@ -22,10 +22,10 @@
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">{{ $todo->id }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">{{ $todo->title }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">{{ $todo->description }}</td>
+                                        <td class="px-6 py-4 whitespace-normal break-words text-sm text-gray-800 dark:text-neutral-200">{{ $todo->description }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">{{ $todo->completed ? "Yes" : "No" }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                            <a href="{{ route('todo.update', $todo->id) }}" class="inline-flex items-center gap-x-2 text-sm font-semibold text-yellow-600 hover:text-yellow-800 dark:text-yellow-500 dark:hover:text-yellow-400">Edit</a>
+                                            <a href="{{ route('todo.update', $todo->id) }}" class="inline-flex items-center gap-x-2 text-sm font-semibold text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">Edit</a>
                                             <form action="{{ route('todo.destroy', $todo->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this todo?');">
                                                 @csrf
                                                 @method('DELETE')
@@ -33,7 +33,6 @@
                                                     Delete
                                                 </button>
                                             </form>
-
                                         </td>
                                     </tr>
                                     @endforeach
@@ -45,31 +44,33 @@
             </div>
         </div>
 
+        <!-- Pagination -->
         <div class="flex justify-center mt-4">
             <div class="flex items-center space-x-2">
                 {{-- Previous Page Link --}}
                 @if ($todos->onFirstPage())
-                <span class="text-gray-500">«</span>
+                <span class="text-gray-500 text-[30px]">«</span>
                 @else
-                <a href="{{ $todos->previousPageUrl() }}" class="text-blue-900 hover:underline">«</a>
+                <a href="{{ $todos->previousPageUrl() }}" class="text-green-900 hover:underline text-[30px]">«</a>
                 @endif
 
                 {{-- Pagination Elements --}}
                 @foreach ($todos->getUrlRange(1, $todos->lastPage()) as $page => $url)
                 @if ($page == $todos->currentPage())
-                <span class="text-gray-900 font-semibold">{{ $page }}</span>
+                <span class="text-green-400 font-semibold text-[20px]">{{ $page }}</span>
                 @else
-                <a href="{{ $url }}" class="text-blue-600 hover:underline">{{ $page }}</a>
+                <a href="{{ $url }}" class="text-green-600 hover:underline text-[20px]">{{ $page }}</a>
                 @endif
                 @endforeach
 
                 {{-- Next Page Link --}}
                 @if ($todos->hasMorePages())
-                <a href="{{ $todos->nextPageUrl() }}" class="text-blue-900 hover:underline">»</a>
+                <a href="{{ $todos->nextPageUrl() }}" class="text-green-900 hover:underline text-[30px]">»</a>
                 @else
-                <span class="text-gray-500">»</span>
+                <span class="text-gray-500 text-[30px]">»</span>
                 @endif
             </div>
         </div>
+        <!--End Pagination -->
     </div>
 </x-layout>
