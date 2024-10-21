@@ -3,19 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// #activity 3 is done already
+use App\Models\Todos;
+
+
 class TodosController extends Controller
 {
-    public function about()
+    public function about() 
     {
         return view('about');
     }
+
     public function contacts()
     {
         return view('contacts');
     }
     public function home()
     {
-        return view('/');
+            $todos = Todo::all();
+            return view('welcome',compact('Todo'));
+
     }
 }

@@ -1,7 +1,8 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\TodosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +15,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodosController::class, 'home']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [TodosController::class, 'about']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
-
+Route::get('/contacts', [TodosController::class, 'contacts']);
