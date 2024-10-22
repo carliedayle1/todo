@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Todo;
+use App\Models\todo
 
-class TodoController extends Controller
+class todocontroller extends Controller
 {
     public function about(){
         return view('about');
