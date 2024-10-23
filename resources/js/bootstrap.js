@@ -3,6 +3,7 @@ window.axios = axios;
 
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
+/** 
 // This code should be added to <head>.
 // It's used to prevent page load glitches.
 const html = document.querySelector("html");
@@ -23,3 +24,4 @@ else if (isDarkOrAuto && !html.classList.contains("dark"))
     html.classList.add("dark");
 else if (isLightOrAuto && !html.classList.contains("light"))
     html.classList.add("light");
+**/
