@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\TodoController; //remove
 
@@ -23,3 +24,14 @@ Route::get('/createtodo', [TodoController::class, 'createtodo']);
 //Route::get('/contact', function () {
     //return view('contact');
 //});
+=======
+use App\Http\Controllers\todocontroller;
+
+Route::get('/', [todocontroller::class, 'home']);
+
+Route::get('about', [todocontroller::class, 'about']);
+
+Route::get('contact', [todocontroller::class, 'contact']);
+
+Route::get('create', [todocontroller::class, 'create']);
+>>>>>>> 637fb355daa7cbfc44bfbb945b41d8d70b5e3bce
