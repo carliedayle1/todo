@@ -47,10 +47,10 @@
       <!-- Collapse -->
       <div id="hs-navbar-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6" aria-labelledby="hs-navbar-hcail-collapse">
         <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
-          <x-navlink name="home" href="/">Home</x-navlink>
-          <x-navlink name="about" href="/about">About</x-navlink>
-          <x-navlink name="contact" href="/contact">Contact</x-navlink>
-          <x-navlink name="createtodo" href="/createtodo">Create Todo</x-navlink>
+          <a href="/" class="text-lg font-medium text-gray-900 hover:text-blue-600 dark:text-gray-100 dark:hover:text-red-400">Home</a>
+          <a href="/about" class="text-lg font-medium text-gray-900 hover:text-blue-600 dark:text-gray-100 dark:hover:text-red-400">About</a>
+          <a href="/contact" class="text-lg font-medium text-gray-900 hover:text-blue-600 dark:text-gray-100 dark:hover:text-red-400">Contact</a>
+          <a href="/createtodo" class="text-lg font-medium text-gray-900 hover:text-blue-600 dark:text-gray-100 dark:hover:text-red-400">Create Todo</a>
         </div>
       </div>
       <!-- End Collapse -->
