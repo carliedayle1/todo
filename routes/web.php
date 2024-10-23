@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController; //remove
+use App\Http\Controllers\TodoController; 
 
 Route::get('/', [TodoController::class, 'welcome']);
 Route::get('/', function () {

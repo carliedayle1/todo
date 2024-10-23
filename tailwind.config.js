@@ -1,14 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
-        "./resources/**/*.blade.php",
-        "./resources/**/*.js",
-        "./resources/**/*.vue",
-        "node_modules/preline/dist/*.js",
+    content: [ 
+      "./resources/**/*.blade.php",
+      "./resources/**/*.js",
+      "./resources/**/*.vue",
+      'node_modules/preline/dist/*.js',
     ],
     theme: {
-        extend: {},
+      extend: {},
     },
-    plugins: [require("preline/plugin"), require("@tailwindcss/forms")],
-    darkMode: "class",
-};
+    plugins: [
+      require('preline/plugin')
+    ],
+    plugins: [require('preline/plugin'),
+      require('@tailwindcss/forms'),], 
+    darkMode: 'class',
+  }
