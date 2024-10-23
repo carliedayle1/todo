@@ -27,6 +27,13 @@ class TodoController extends Controller
     }
 
     public function store(){
+
+        request()->validate([
+            'title' => 'required|min:3',
+            'description' => 'required|min:5',
+            'completed' => 'required'
+        ]);
+        
         Todo::create([
             'title' => request()->title,
             'description' => request()->description,
@@ -45,6 +52,12 @@ class TodoController extends Controller
         ]);
     }
     public function update(Todo $todo){
+        request()->validate([
+            'title' => 'required|min:3',
+            'description' => 'required|min:5',
+            'completed' => 'required'
+        ]);
+        
         $todo->update([
             'title' => request()->title,
             'description' => request()->description,
