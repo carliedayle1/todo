@@ -1,4 +1,6 @@
-Welcome
+<x-layout>
+    <x-slot:heading>
+        Welcome
     </x-slot>
  <h1>Welcome Page</h1>
  
@@ -22,4 +24,7 @@ Welcome
    @endforeach
   </tbody>
 </table>
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+        <h1 class="text-2xl font-semibold mb-4">Welcome</h1>
+    </div>
 </x-layout>
