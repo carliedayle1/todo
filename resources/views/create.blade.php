@@ -57,5 +57,6 @@
   Submit
 </button>
     </div>
+        </form>
     </div>
 </x-layout>

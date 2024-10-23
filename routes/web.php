@@ -9,5 +9,6 @@ Route::get('/about', [TodoController::class, 'about']);
 
 Route::get('/contact', [TodoController::class, 'contact']); 
 
-
 Route::get('/create', [TodoController::class, 'create']);
+
+Route::post('/todo/store', [TodoController::class, 'store']);
