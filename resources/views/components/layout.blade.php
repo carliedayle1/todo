@@ -23,8 +23,7 @@
     <main class="flex-grow container mx-auto px-6 py-8">
         {{ $slot }}
     </main>
-
+    <!-- Footer -->
     <x-footer />
 </body>
-
 </html>
