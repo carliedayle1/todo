@@ -2,27 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Todo;
 use Illuminate\Http\Request;
-use App\Models\todo
 
 class todocontroller extends Controller
 {
-    public function about(){
-        return view('about');
-    }
-    
-    public function home(){
+    public function home()
+    {
         $todos = Todo::all();
+
         
-        return view('welcome', [
+        return view('home', [
             'todos' => $todos,
         ]);
     }
-    
-    public function contact(){
+    public function about()
+    {
+        return view('about');
+    }
+    public function contact()
+    {
         return view('contact');
     }
-    public function create(){
-        return view('create');
+    public function createtodo()
+    {
+        return view('createtodo');
     }
 }
