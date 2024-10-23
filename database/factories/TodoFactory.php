@@ -17,9 +17,8 @@ class TodoFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->string(),
-            'description' => $this->faker->longtext(),
-            'completed' => $this->faker->boolean(),
+            'title' => fake()->name(),
+            'description' => fake()->paragraph(),
         ];
     }
 }
