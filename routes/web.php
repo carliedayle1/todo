@@ -27,3 +27,9 @@ Route::get('/todos', [TodoController::class, 'index'])->name('todos.index');
 Route::get('/new-layout', function () {
     return view('pages.new_layout_view');
 });
+
+use App\Http\Controllers\TodoController;
+
+Route::get('/', [TodoController::class, 'welcome'])->name('welcome');  
+Route::get('/create', [TodoController::class, 'create'])->name('todos.create');  
+Route::post('/todos', [TodoController::class, 'store'])->name('todos.store');  
