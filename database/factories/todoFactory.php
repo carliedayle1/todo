@@ -17,7 +17,7 @@ class todoFactory extends Factory
     public function definition(): array
     {
         return [
-             //'name' => fake()->name(),
+             //'name' => fake()->name(), deadass this got overwritten too?
             //'email' => fake()->unique()->safeEmail(),
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
