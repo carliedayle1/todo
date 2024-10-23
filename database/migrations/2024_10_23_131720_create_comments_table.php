@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('comments', function (Blueprint $table) {
+
             $table->id();
             $table->foreignID('todo_id')->constrained()->onDelete('cascade');
             $table->text('comment');
