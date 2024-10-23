@@ -24,3 +24,6 @@ Route::get('/todos', [TodoController::class, 'index'])->name('todos.index');
 
 
 
+Route::get('/new-layout', function () {
+    return view('pages.new_layout_view');
+});
