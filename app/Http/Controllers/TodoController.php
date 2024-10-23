@@ -9,7 +9,7 @@ class TodoController extends Controller
 {
     public function home()
     {
-        $todos = Todo::all();
+        $todos = Todo::latest()->get();
 
         
         return view('home', [
@@ -32,7 +32,7 @@ class TodoController extends Controller
     }
 
     public function contact(){
-        return view('contacts');
+        return view('contact');
     }
 
     public function create(){
@@ -42,7 +42,39 @@ class TodoController extends Controller
 
     public function store(){
         
-        dd(request()->all());
+        Todo::create([
+            'title' => request()->title,
+            'description' => request()->description,
+            'completed' => request()->completed == 'Yes' ? true : false
+        ]);
+        
+       // dd(request()->all());
+
+       return redirect('/');
+    }
+
+    public function destroy(Todo $todo){
+        
+       $todo->delete();
+
+       return back();
+    }
+
+    public function edit(Todo $todo){
+
+        return view('edit', ['todo' => $todo]);
+    }
+
+    public function update(Todo $todo){
+       // dd(request()->all());
+
+        $todo->update([
+            'title' => request()->title,
+            'description' => request()->description,
+            'completed' => request()->completed == 'Yes' ? true : false
+        ]);
+
+        return redirect('/');
     }
 
 }
