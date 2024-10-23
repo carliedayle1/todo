@@ -16,7 +16,7 @@ class TodoController extends Controller
             'todos' => $todos,
         ]);
     }
-    
+
     public function about(){
         return view('about');
     }
@@ -36,6 +36,7 @@ class TodoController extends Controller
     }
 
     public function create(){
+        
         return view('create');
     }
 
