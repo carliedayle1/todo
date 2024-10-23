@@ -1,24 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TodoController;
+use App\Http\Controllers\TodoController; // Keep this line if you use TodoController
 
 // Home route
-Route::get('/', [TodoController::class, 'welcome'])->name('welcome');
+Route::get('/', [TodoController::class, 'home'])->name('home');
 
 // About page
-Route::get('/about', [TodoController::class, 'about']);
+Route::get('/about', [TodoController::class, 'about'])->name('about');
 
 // Contact page
-Route::get('/contact', [TodoController::class, 'contact']);
+Route::get('/contact', [TodoController::class, 'contact'])->name('contact');
 
-// Create Todo routes
-Route::get('/create', [TodoController::class, 'create'])->name('todo.create');
-Route::post('/store', [TodoController::class, 'store'])->name('todo.store');
-
-// Edit Todo routes
-Route::get('/todos/{id}/edit', [TodoController::class, 'edit'])->name('todo.edit');
-Route::put('/todos/{id}', [TodoController::class, 'update'])->name('todo.update');
-
-// Delete Todo route
-Route::delete('/todos/{id}', [TodoController::class, 'delete'])->name('todos.delete');
+// Create Todo route
+Route::get('/create-todo', [TodoController::class, 'createTodo'])->name('todo.create');
