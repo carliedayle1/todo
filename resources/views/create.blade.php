@@ -44,4 +44,4 @@
         </form>
     </div>
 </x-layout>
-    <!-- run "npm run dev" in terminal -->
+    <!-- run "npm run dev" in terminal first-->
