@@ -74,8 +74,8 @@ class TodoController extends Controller
     {
         try {
             $validated = $request->validate([
-                'title' => 'required|string|max:255',
-                'description' => 'nullable|string',
+                'title' => 'required|min:3',
+                'description' => 'required|min:4',
                 'completed' => 'required|boolean',
             ]);
 
@@ -109,18 +109,13 @@ class TodoController extends Controller
 
         if ($request->isMethod('put')) {
             $validatedData = $request->validate([
-                'title' => 'required|max:255',
-                'description' => 'nullable',
+                'title' => 'required|min:3',
+                'description' => 'required|min:5',
                 'completed' => 'required|boolean',
             ]);
+            $this->todoService->handleTodoDataUpdate($validatedData, $id);
 
-            try {
-                $this->todoService->handleTodoDataUpdate($validatedData, $id);
-
-                return redirect()->route('welcome')->with('success', 'Todo updated successfully!');
-            } catch (Exception $ex) {
-                return redirect()->back()->with('error', 'Failed to update Todo: ' . $ex->getMessage());
-            }
+            return redirect()->route('welcome')->with('success', 'Todo updated successfully!');
         }
     }
 }
