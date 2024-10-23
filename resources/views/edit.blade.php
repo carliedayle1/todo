@@ -13,7 +13,7 @@
     [&:not(:placeholder-shown)]:pt-6
     [&:not(:placeholder-shown)]:pb-2
     autofill:pt-6
-    autofill:pb-2" placeholder="Title here" value="{{$todo->title}}">
+    autofill:pb-2" placeholder="Title here" value="{{ old('title') ? old('title') : $todo->title}}">
     <label for="hs-floating-input-email" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
       peer-focus:scale-90
       peer-focus:translate-x-0.5
@@ -23,6 +23,11 @@
       peer-[:not(:placeholder-shown)]:translate-x-0.5
       peer-[:not(:placeholder-shown)]:-translate-y-1.5
       peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Title</label>
+      @error('title')
+      <p class="text-red-500 text-sm">
+          {{$message}}
+      </p>
+      @enderror
   </div>
 </div>
 <div class="max-w-sm space-y-5">
@@ -35,7 +40,7 @@
         [&:not(:placeholder-shown)]:pb-2
         autofill:pt-6
         autofill:pb-2" placeholder="This is a textarea placeholder" rows="10" cols="50">
-        {{$todo->description}}
+        {{old('description') ? old('description') : $todo->description}}
         </textarea>
     <label for="hs-floating-textarea" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
       peer-focus:text-xs
@@ -43,7 +48,12 @@
       peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
       peer-[:not(:placeholder-shown)]:text-xs
       peer-[:not(:placeholder-shown)]:-translate-y-1.5
-      peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Comment</label>
+      peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Description</label>
+      @error('description')
+      <p class="text-red-500 text-sm">
+          {{$message}}
+      </p>
+      @enderror
   </div>
 <!-- Floating Select -->
 <div class="relative">
