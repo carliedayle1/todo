@@ -11,6 +11,7 @@ class Comment extends Model
     protected $guarded = [];
     
     public function todo(){
+        
         return $this->belongsTo(Todo::class);
     }
 }

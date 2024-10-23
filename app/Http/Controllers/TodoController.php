@@ -82,6 +82,7 @@ class TodoController extends Controller
 
 
         $todo->update([
+            
             'title' => request()->title,
             'description' => request()->description,
             'completed' => request()->completed == 'Yes' ? true : false
