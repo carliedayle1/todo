@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class todo extends 
-
+class Todo extends Model
 {
     use HasFactory;
 
-    //protected $table = 'todos';
-    protected $fillable = ['title', 'description', 'completed'];
-} 
+    protected $guarded = [];
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+}
