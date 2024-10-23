@@ -14,37 +14,47 @@ class TodoController extends Controller
     public function home()
     {
         $todos = Todo::all();
-@@ -16,10 +20,6 @@
+
+        
+        return view('home', [
             'todos' => $todos,
         ]);
-    }
-    public function about()
-    {
-        return view('about');
     }
     public function contact()
     {
         return view('contact');
-@@ -28,4 +28,41 @@
+    }
+    public function createtodo()
     {
         return view('createtodo');
     }
     public function store()
     {
- 
+
+        request()->validate([
+            'title' => 'required|min:3',
+            'description' => 'required|min:5',
+            'completed' => 'required'
+        ]);
+
+        
         Todo::create([
             'title' => request()->title,
             'description' => request()->description,
             'completed' => request()->completed == 'Yes' ? true : false
         ]);
+
     return redirect('/');
     }
     public function destroy(Todo $todo)
     {
         $todo->delete();
+
         return back();
     }
+
     public function edit(Todo $todo){
+
         //dd($todo);
         return view('edit',[
             'todo' => $todo
@@ -53,11 +63,13 @@ class TodoController extends Controller
     public function update(Todo $todo)
     {
         //dd(request()->all());
+
         $todo->update([
             'title' => request()->title,
             'description' => request()->description,
             'completed' => request()->completed == 'Yes' ? true : false
         ]);
+
         return redirect('/');
     }
 }
