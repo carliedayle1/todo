@@ -14,8 +14,8 @@ Route::get('/todo/create', [TodoController::class, 'create']);
 
 Route::post('/todo/store', [TodoController::class, 'store']);
 
-Route::delete('/todo/{todo}', [TodoController::class, 'destroy']);
+Route::delete('/todo/{todos}', [TodoController::class, 'destroy']);
 
-Route::get('/todo/{todo}', [TodoController::class, 'edit']);
+Route::get('/todo/{todos}', [TodoController::class, 'edit']);
 
-Route::patch('/todo/{todo}', [TodoController::class, 'update']);
+Route::patch('/todo/{todos}', [TodoController::class, 'update']);
