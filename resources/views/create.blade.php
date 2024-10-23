@@ -33,7 +33,7 @@
                 </select>
             </div>
 
-           <!-- run "npm run dev" in terminal -->
+       
             <div class="flex justify-center mt-4">
                 <button class="bg-blue-500 dark:bg-blue-700 text-white font-bold py-2 px-4 rounded 
                         hover:bg-blue-600 dark:hover:bg-blue-800 
@@ -44,3 +44,4 @@
         </form>
     </div>
 </x-layout>
+    <!-- run "npm run dev" in terminal -->
