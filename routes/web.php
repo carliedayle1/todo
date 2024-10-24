@@ -9,3 +9,7 @@ Route::get('/', [TodoController::class, 'welcome']);
 Route::get('/about', [TodoController::class, 'about' ]);
 
 Route::get('/contact', [TodoController::class, 'contact']);
+
+Route::get('/createtodo', [TodoController::class, 'createtodo']);
+
+?>

@@ -21,4 +21,8 @@ class TodoController extends Controller
     {
         return view('contact');
     }
+    public function createtodo(){
+        return view('createtodo');
+    }
+    
 }
