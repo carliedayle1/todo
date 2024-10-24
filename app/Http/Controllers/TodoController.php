@@ -32,4 +32,35 @@ class TodoController extends Controller
         return view('create');
     }
 
+    public function store()
+    {
+        Todo::create([
+            'title' => request()->title,
+            'description' => request()->description,
+            'completed' => request()->completed == 'Yes' ? true : false
+        ]);
+        return redirect('/');
+    }  
+    public function destroy(Todo $todos)
+    {
+        
+        $todos->delete();
+        return back();
+    }
+    public function edit(Todo $todos)
+    {
+        return view('edit', [
+            'todos' => $todos
+        ]);
+    }
+    public function update(Todo $todos)
+    {
+        $todos->update([
+            'title' => request()->title,
+            'description' => request()->description,
+            'completed' => request()->completed == 'Yes' ? true : false
+        ]);
+        return redirect('/');
+    }
+    
 }
