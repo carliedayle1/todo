@@ -1,7 +1,6 @@
 <x-layout>
-    <x-slot:heading>
-        Contact Page
-    </x-slot:heading>
-<h1>Hello from the Contact page</h1>
+<div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+<h1 class="text-2xl font-semibold mb-4">Contact Page</h1>
+    </div>
 
 </x-layout>
