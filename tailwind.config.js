@@ -9,6 +9,8 @@ export default {
     theme: {
         extend: {},
     },
-    plugins: [require("preline/plugin"), require("@tailwindcss/forms")],
+    plugins: [
+        require("preline/plugin"),
+        require("@tailwindcss/forms")],
     darkMode: "class",
 };
