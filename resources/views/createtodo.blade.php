@@ -18,7 +18,7 @@
                                   [&:not(:placeholder-shown)]:pt-6 
                                   [&:not(:placeholder-shown)]:pb-2 
                                   autofill:pt-6 autofill:pb-2" 
-                           placeholder="you@email.com" required>
+                           placeholder="Title here" value="{{ old('description')}}">
                     <label for="hs-floating-input-title" 
                            class="absolute top-0 start-0 p-4 h-full text-sm truncate 
                                   pointer-events-none transition ease-in-out duration-100 
@@ -33,6 +33,11 @@
                                   peer-[:not(:placeholder-shown)]:text-gray-500 
                                   dark:peer-[:not(:placeholder-shown)]:text-neutral-500 
                                   dark:text-neutral-500">Title</label>
+                    @error('title')
+                    <p class="text-red-500 text-sm">
+                    {{ $message }}
+                  </p>
+                  @enderror
                 </div>
                 <!-- End Floating Input -->
 
@@ -50,7 +55,7 @@
                                      [&:not(:placeholder-shown)]:pt-6 
                                      [&:not(:placeholder-shown)]:pb-2 
                                      autofill:pt-6 autofill:pb-2" 
-                              placeholder="This is a textarea placeholder"></textarea>
+                              placeholder="This is a textarea placeholder" value = {{ old('description')}}></textarea>
                     <label for="hs-floating-textarea" 
                            class="absolute top-0 start-0 p-4 h-full text-sm truncate 
                                   pointer-events-none transition ease-in-out duration-100 
@@ -64,6 +69,11 @@
                                   dark:peer-[:not(:placeholder-shown)]:text-neutral-500 
                                   dark:text-neutral-500">Description</label>
                 </div>
+                @error('description')
+                <p class="text-red-500 text-sm">
+                  {{ $message }}
+                </p>
+                @enderror
                 <!-- End Floating Textarea -->
 
                 <!-- Floating Select -->

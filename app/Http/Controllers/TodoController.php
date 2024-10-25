@@ -29,6 +29,13 @@ class TodoController extends Controller
     //CRUD Function
     public function store()
     {
+        //Validation
+        request()->validate([
+            'title' => 'required|min:3',
+            'description' => 'required|min:5',
+            'completed' => 'required'
+        ]);
+
         Todo::create([
             'title' => request()->title,
             'description' => request()->description,
@@ -57,4 +64,7 @@ class TodoController extends Controller
         ]);
         return redirect('/');
     }
+
+    
+
 }
