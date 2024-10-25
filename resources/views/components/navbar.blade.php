@@ -1,4 +1,3 @@
-
 <!-- ========== HEADER ========== -->
 <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
     <nav class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 md:px-8 mx-auto">
@@ -48,6 +47,7 @@
       <div id="hs-navbar-hcail" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block md:w-auto md:basis-auto md:order-2 md:col-span-6" aria-labelledby="hs-navbar-hcail-collapse">
         <div class="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:justify-center md:items-center md:gap-y-0 md:gap-x-7 md:mt-0">
           <x-navlink name="home">Home</x-navlink>
+          <x-navlink name="create">Create</x-navlink>
           <x-navlink name="about">About</x-navlink>
           <x-navlink name="contact">Contact</x-navlink>
         </div>
