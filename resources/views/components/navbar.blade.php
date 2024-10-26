@@ -1,4 +1,3 @@
-
 <!-- ========== HEADER ========== -->
 <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full py-7">
     <nav class="relative max-w-7xl w-full flex flex-wrap md:grid md:grid-cols-12 basis-full items-center px-4 md:px-6 md:px-8 mx-auto">
@@ -9,7 +8,7 @@
         </a>
         <!-- End Logo -->
       </div>
-  
+    
       <!-- Button Group -->
       <div class="flex items-center gap-x-1 md:gap-x-2 ms-auto py-1 md:ps-6 md:order-3 md:col-span-3">
         <button type="button" class="hs-dark-mode-active:hidden block hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" data-hs-theme-click-value="dark">
@@ -18,6 +17,7 @@
                 <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
               </svg>
             </span>
+            
           </button>
           <button type="button" class="hs-dark-mode-active:block hidden hs-dark-mode font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800" data-hs-theme-click-value="light">
             <span class="group inline-flex shrink-0 justify-center items-center size-9">
@@ -50,6 +50,7 @@
           <x-navlink name="home">Home</x-navlink>
           <x-navlink name="about">About</x-navlink>
           <x-navlink name="contact">Contact</x-navlink>
+          <x-navlink name="createtodo">Create Todo</x-navlink>
         </div>
       </div>
       <!-- End Collapse -->
