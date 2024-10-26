@@ -1,2 +1,2 @@
-import "./bootstrap";
-import 'preline'
+import './bootstrap';
+import 'preline';
