@@ -18,8 +18,6 @@ class Todocontroller extends Controller
         ]);
     }
 
- 
-// no idea why but it works ig ¯\_(ツ)_/¯
     public function about()
     {
         return view('about');
@@ -35,7 +33,7 @@ class Todocontroller extends Controller
         return view('create');
     }
 
-     // Store new Todo
+    
      public function store(Request $request)
      {
          $request->validate([
@@ -49,25 +47,32 @@ class Todocontroller extends Controller
              'description' => $request->description,
              'completed' => $request->completed,
          ]);
-         return redirect()->route('welcome')->with('success', 'Todo created successfully!');
+         return redirect()->route('welcome')->with('created', 'Todo created successfully!');
 
-        //  return redirect()->route('todo.welcome'); // Assuming the 'index' displays all todos
      }
+     public function update(Request $request, $id)
+     {
+         $request->validate([
+             'title' => 'required|string|max:255',
+             'description' => 'nullable|string',
+         ]);
+     
+         $todo = Todo::findOrFail($id);
+         $todo->title = $request->input('title');
+         $todo->description = $request->input('description');
+         $todo->completed = $request->has('completed');
+         $todo->save();
+     
+         return redirect()->route('welcome')->with('success', 'Todo updated successfully');
+     }
+     
+     public function edit($id)
+{
+   
+    $todo = Todo::findOrFail($id);
+    return view('edit', compact('todo'));
+}
 
-    //  public function edit(Todo $todo){
-
-        
-    //     return view('edit',[
-    //         'todo' => $todo
-    //     ]);
-    // }
-
-    // Show the edit form
-    // public function edit($id)
-    // {
-    //     $todo = Todo::findOrFail($id);
-    //     return view('todos.edit', compact('todo'));
-    // }
 
    
     

@@ -1,3 +1,15 @@
+@if(session('success'))
+    <div class="bg-green-350 text-white p-4 rounded-lg mb-4 text-center" >
+        {{ session('success') }}
+        <span class="text-green-500">✔️</span>
+    </div>
+@endif
+@if(session('created'))
+            <div class="bg-green-350 text-white p-4 rounded-lg mb-4 text-center">
+                {{ session('created') }}
+                <span class="text-green-500">✔️</span>
+            </div>
+        @endif
 <x-layout>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <h1 class="text-2xl font-semibold mb-4 dark:text-white">Display Todo</h1>
@@ -25,7 +37,8 @@
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">{{ $todo->description }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">{{ $todo->completed ? "Yes" : "No" }}</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                            <!-- <a href="{{ route('todo.edit', $todo->id) }}" class="inline-flex items-center gap-x-2 text-sm font-semibold text-yellow-600 hover:text-yellow-800 dark:text-yellow-500 dark:hover:text-yellow-400">Edit</a>   <-this doesnt work yet       -->
+                                            <a href="{{ route('todo.edit', $todo->id) }}" class="inline-flex items-center gap-x-2 text-sm font-semibold text-yellow-600 hover:text-yellow-800 dark:text-yellow-500 dark:hover:text-yellow-400">Edit</a>
+                                                
                                             <form action="{{ route('todos.delete', $todo->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this todo?');">
     @csrf
     @method('DELETE')
@@ -35,7 +48,7 @@
 </form>
  
     
-                                            </td>
+                                            </td>   
                                         </tr>
                                     @endforeach
                                 </tbody>
