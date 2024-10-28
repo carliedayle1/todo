@@ -1,15 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController; 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodoController::class, 'home']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [TodoController::class, 'about']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [TodoController::class, 'contact']);
+
+Route::get('/createtodo', [TodoController::class, 'createtodo']);
+
+Route::post('/todo/store', [TodoController::class, 'store']);
+
+Route::delete('/todo/{todo}', [TodoController::class, 'destroy']);
+
+Route::get('/todo/{todo}', [TodoController::class, 'edit']);
+
+Route::patch('/todo/{todo}', [TodoController::class, 'update']);
