@@ -1,7 +1,6 @@
 <x-layout>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
         <h1 class="text-2xl font-semibold mb-4">Display Todo</h1>
- 
         <div class="mt-6">
           <div class="flex flex-col">
             <div class="-m-1.5 overflow-x-auto">

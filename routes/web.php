@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController; 
 
+
 Route::get('/', [TodoController::class, 'home']);
 
 Route::get('/about', [TodoController::class, 'about']);

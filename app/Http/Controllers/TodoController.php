@@ -30,6 +30,7 @@ class TodoController extends Controller
     }
     public function store()
     {
+
         request()->validate([
             'title' => 'required|min:3',
             'description' => 'required|min:5',
