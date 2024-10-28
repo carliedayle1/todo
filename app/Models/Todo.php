@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
