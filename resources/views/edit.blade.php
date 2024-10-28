@@ -4,8 +4,9 @@
         <form action="/todo/{{$todo->id}}" method="POST">
           @csrf
           @method('PATCH')
-        <div class="container p-4">
           
+        <div class="container p-4">
+
           <div class="max-w-sm space-y-3 mx-auto">
               <!-- Floating Input -->
               <div class="relative">

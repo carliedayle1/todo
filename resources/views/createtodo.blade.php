@@ -3,7 +3,6 @@
         <h1 class="text-2xl font-semibold mb-4">Create Todo</h1>
         <form action="/todo/store" method="POST">
           @csrf
-          
         <div class="container p-4">
           <div class="max-w-sm space-y-3 mx-auto">
               <!-- Floating Input -->

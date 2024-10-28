@@ -62,7 +62,7 @@ class TodoController extends Controller
     }
     public function update(Todo $todo)
     {
-        //dd(request()->all());
+        //dd(request()->all())
 
         $todo->update([
             'title' => request()->title,
