@@ -23,6 +23,12 @@
                     peer-[:not(:placeholder-shown)]:translate-x-0.5
                     peer-[:not(:placeholder-shown)]:-translate-y-1.5
                     peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Title</label>
+
+                    @error('title')
+                        <p class="text-red-700 text-sm">
+                            {{ $message }}
+                        </p>
+                    @enderror
                 </div>
             </div>
 
@@ -43,6 +49,13 @@
                     peer-[:not(:placeholder-shown)]:text-xs
                     peer-[:not(:placeholder-shown)]:-translate-y-1.5
                     peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Description</label>
+
+                    @error('description')
+                    <p class="text-red-700 text-sm">
+                        {{ $message }}
+                    </p>
+                @enderror
+                
                 </div>
 
                 <!-- Select Dropdown for Completed -->
