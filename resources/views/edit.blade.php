@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <h1 class="text-2xl font-semibold mb-4">Edit Todo</h1>
+    <div class="p-6 bg-white rounded-lg shadow dark:bg-gray-800">
+        <h1 class="mb-4 text-2xl font-semibold">Edit Todo</h1>
         <form action="/todo/{{$todo->id}}" method="POST">
             @csrf
             @method('PATCH')
@@ -24,7 +24,7 @@
       peer-[:not(:placeholder-shown)]:-translate-y-1.5
       peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Title</label>
       @error('title')
-      <p class="text-red-500 text-sm">
+      <p class="text-sm text-red-500">
         {{$message}}
       </p>
       @enderror
@@ -48,7 +48,7 @@
       peer-[:not(:placeholder-shown)]:-translate-y-1.5
       peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Description</label>
       @error('description')
-      <p class="text-red-500 text-sm">
+      <p class="text-sm text-red-500">
         {{$message}}
       </p>
       @enderror
@@ -77,9 +77,37 @@
   </div>
   <!-- End Floating Select -->
 
-<button type="submit" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none">
+<button type="submit" class="inline-flex items-center px-4 py-3 text-sm font-medium text-white bg-teal-500 border border-transparent rounded-lg gap-x-2 hover:bg-teal-600 focus:outline-none focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none">
   Submit
 </button>
     </div>
     </div>
+
+    <div>
+        <div class="flex flex-col">
+            <div class="-m-1.5 overflow-x-auto">
+              <div class="p-1.5 min-w-full inline-block align-middle">
+                <div class="overflow-hidden">
+                  <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">Comment</th>
+
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        @foreach($todo->comments as $comment)
+                        <tr>
+                            <td class ="px-6 py-4 text-sm font-medium text-gray-800">{{ $comment->comment}}
+
+                        </tr>
+                        @endforeach
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 </x-layout>

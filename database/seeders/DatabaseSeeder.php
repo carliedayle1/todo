@@ -14,9 +14,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-        Todo::factory()->create([
-            'title' => fake()->title(),
-            'description' => fake()->paragraph(),
+
+        // Todo::factory()->create([
+        //     'title' => fake()->title(),
+        //     'description' => fake()->paragraph(),
+        // ]);
+
+        $this->call([
+            TodoSeeder::class,
         ]);
+
+
     }
 }
