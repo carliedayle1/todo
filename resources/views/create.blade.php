@@ -40,9 +40,23 @@
       peer-focus:-translate-y-1.5
       peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
       peer-[:not(:placeholder-shown)]:text-xs
-      peer-[:not(:placeholder-shown)]:-translate-y-1.5
+       peer-[:not(:placeholder-shown)]:-translate-y-1.5
       peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Comment</label>
   </div>
+<<<<<<< HEAD
+=======
+    <p class="text-sm"> Completed? </p>
+  <div class="grid sm:grid-cols-2 gap-2">
+  <label for="hs-radio-in-form" class="flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+    <input type="radio" name="completed" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-radio-in-form">
+    <span class="text-sm text-gray-500 ms-3 dark:text-neutral-400">Yes</span>
+  </label>
+
+  <label for="hs-radio-checked-in-form" class="flex p-3 w-full bg-white border border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+    <input type="radio" name="completed" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" id="hs-radio-checked-in-form" checked="">
+    <span class="text-sm text-gray-500 ms-3 dark:text-neutral-400">No</span>
+  </label>
+>>>>>>> 432c3ac6174731371685734994f89a16dd0482f1
   <!-- Floating Select -->
 <div class="relative">
   <select name="completed" class="peer p-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
@@ -66,6 +80,10 @@
 <!-- End Floating Select -->
 </div>
 
+<<<<<<< HEAD
+=======
+<button type="submit" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none">
+>>>>>>> 432c3ac6174731371685734994f89a16dd0482f1
 <button type="submit" class="mt-[20px] py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none">
   Submit
 </button>
